@@ -1,0 +1,75 @@
+{
+  "name": "etexcepturi",
+  "description": "The meta-framework suite designed from scratch for frontend-focused modern web development.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KurtisSchroeder/etexcepturi.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "nam",
+    "mollitia",
+    "id",
+    "at"
+  ],
+  "engines": {
+    "node": ">=14.17.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ],
+    "*.{js,jsx,mjs,mjsx,cjs,cjsx}": [
+      "node --max_old_space_size=8192 ./node_modules/eslint/bin/eslint.js --fix --color --cache --quiet"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@modern-js"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/",
+    "lib/",
+    "compiled/",
+    ".rpt2_cache/",
+    "coverage/"
+  ],
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.7",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@modern-js-app/eslint-config": "workspace:^1.2.3",
+    "@modern-js/eslint-config": "workspace:^1.2.1",
+    "@modern-js/monorepo-tools": "workspace:^1.4.0",
+    "@modern-js/plugin-jarvis": "workspace:^1.2.3",
+    "@modern-js/tsconfig": "workspace:^1.2.0",
+    "@scripts/build": "workspace:*",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "btsm": "2.2.2",
+    "enhanced-resolve": "^5.9.2",
+    "esbuild": "^0.13.15",
+    "esbuild-jest": "0.5.0",
+    "jest": "^27.5.1",
+    "scan-deps": "0.1.0"
+  },
+  "author": "ConorFay",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/KurtisSchroeder/etexcepturi.git/issues"
+  },
+  "homepage": "https://github.com/KurtisSchroeder/etexcepturi.git"
+}
